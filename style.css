@@ -1,0 +1,154 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    color: black;
+    font-weight: 600;
+}
+
+
+.user-card {
+    box-shadow: 0px 0px 10px rgba(227, 149, 149, 0.2);
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 20px;
+    overflow: hidden;
+    transition: transform 0.8s ease-in-out;
+    cursor: pointer;
+    border-radius: 39px;
+    background: #fae48e;
+    box-shadow:  1px 1px 6px #671313,-5px -5px 4px #aa0000;
+    box-shadow: #094c66 4px 4px 0px;
+    transition: all 1s ease;
+}
+
+.user-card:hover {
+    transform: scale(1.15);
+    
+}
+
+.user-card.expanded {
+    width: 200px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+    order: 1;
+    padding: 10px 25px 40px;
+}
+
+.user-card:hover .profile-picture {
+    transform: scale(1.1);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info {
+    padding: 20px;
+    display: none;
+    order: 2;
+}
+
+.user-card.expanded .user-info {
+    display: block;
+}
+
+.username {
+    font-size: 24px;
+    margin: 0;
+}
+
+.full-name, .gender, .birthdate, .address, .email {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+button {
+    background: #fae48e;
+    box-shadow:  1px 1px 6px #671313,-5px -5px 4px #aa0000;
+    box-shadow: #094c66 4px 4px 0px;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 200ms, box-shadow 200ms;
+}
+
+button:active{
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #094c66 0px 0px 0px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    
+@media (max-width: 768px) {
+    .user-card {
+        max-width: 100%;
+        }
+        
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+}
+
+.user-card.expanded {
+    flex-direction: column;
+}
+
+.user-info {
+    padding: 10px;
+}
+
+.username {
+    font-size: 20px;
+}
+
+.full-name, .gender, .birthdate, .address, .email {
+    font-size: 14px;
+}
+}
+
+#text{
+    text-align: left;
+}
